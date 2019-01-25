@@ -46,7 +46,7 @@ module ActiveRecord
                     record[association_key_name]
                   end
 
-            owner = owners_by_key[key]
+            owner = owners_by_key[key.to_s]
             association = owner.association(reflection.name)
             association.set_inverse_instance(record)
           end
